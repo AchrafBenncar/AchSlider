@@ -1,0 +1,91 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  min-height: 100vh;
+  font-family: sans-serif;
+  background: linear-gradient(to right ,  #11998e , #38ef7D);
+  padding: clamp(20px , 12vw , 120px) 10px 10px;
+}
+.slider-container{
+  max-width: 600px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  background-color: #111;
+  border-radius: 4px;
+  display: grid;
+}
+.direction-btn{
+  position: absolute;
+  z-index: 100;
+  height: 50px;
+  width: 50px;
+  border: 1px solid #fff;
+  background: transparent;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.direction-btn.left{
+  left: 10%;
+}
+.direction-btn.right{
+  right: 10%;
+}
+.direction-btn img{
+  width: 50%;
+  pointer-events: none;
+}
+.direction-btn:hover{
+  background-color: #2c2929;
+}
+.slide{
+  grid-area: 1 / 1 / 2 / 2;
+  padding: 50px 0;
+  /* background-color: #111; */
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+.slide.active{
+  display: flex;
+}
+.content{
+  color: #fff;
+  text-align: center;
+}
+.content img{
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+}
+.content h2{
+  font-size: 24px;
+  margin-top: 20px;
+}
+.content p{
+  font-size: 20px;
+  color: gray;
+  margin-top: 10px;
+}
+.content button{
+  font-size: 20px;
+  padding: 10px;
+  border: 1px solid #d1d1d1;
+  color: #d1d1d1;
+  border-radius: 3px;
+  background: transparent;
+  min-width: 200px;
+  cursor: pointer;
+  margin-top: 40px;
+  margin-bottom: 50px;
+}
