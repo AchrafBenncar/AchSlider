@@ -50,7 +50,7 @@ function slideAnimation(obj){
     obj.el.style[prop] = obj.props[prop] ; 
   }
 }
-function slideIn(){
+function slideIn(e){
   slideAnimation({
     el: slides[slideData.slideInIndex] ,
     props : {
@@ -60,6 +60,7 @@ function slideIn(){
     }
   }) ;
   slides[slideData.slideOutIndex].classList.remove("active") ;
+  e.target.removeEventListener("transitionend" , slideIn) ;
   slides[slideData.slideInIndex].classList.add("active") ;
   setTimeout(() => {
     slideData.locked = false ;
